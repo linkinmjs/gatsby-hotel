@@ -8,7 +8,7 @@ Proyecto didáctico hecho en React.
 
 ## Descripción
 
-Proyecto React utilizando Gatsby.
+Proyecto React utilizando Gatsby. También se utilizó DatoCMS.
 Se podrá visualizar el ejemplo en producción en [link](https://hardcore-banach-b1ffc1.netlify.app)
 
 ### Tecnologías
