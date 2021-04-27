@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const ContenidoInicio = () => {
 
@@ -10,9 +11,7 @@ const ContenidoInicio = () => {
                     titulo
                     contenido
                     imagen {
-                        fluid{
-                            ...GatsbyDatoCmsFluid
-                        }
+                        gatsbyImageData
                     }
                 }
             }
@@ -29,7 +28,7 @@ const ContenidoInicio = () => {
 
             <div>
                 <p>{contenido}</p>
-                <img src={imagen.fluid.src} />
+                <GatsbyImage image={imagen.gatsbyImageData} alt="inicio" />
             </div>
 
         </>
