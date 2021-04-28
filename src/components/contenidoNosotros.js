@@ -39,7 +39,7 @@ const ContenidoNosotros = () => {
 
     const { titulo, contenido, imagen } = resultado.allDatoCmsPagina.nodes[0];
 
-    console.log(imagen);
+    // console.log(imagen);
 
     return (
         <>
