@@ -1,7 +1,23 @@
 import React from 'react';
-const HabitacionPreview = () => {
+import { GatsbyImage } from 'gatsby-plugin-image';
+
+const HabitacionPreview = ({habitacion}) => {
+
+    const {contenido, imagen, titulo, slug} = habitacion;
+    console.log(imagen);
+
     return ( 
-        <p>Desde habitacion</p>
+        <div>
+            <GatsbyImage 
+                image={imagen.gatsbyImageData}
+                alt="Habitación"
+            />
+
+            <div>
+                <h3>{titulo}</h3>
+                <p>{contenido}</p>
+            </div>
+        </div>
      );
 }
  

@@ -11,9 +11,7 @@ const useHabitaciones = () => {
             slug
             contenido
             imagen {
-              fluid(maxWidth: 1200) {
-                ...GatsbyDatoCmsFluid
-              }
+              gatsbyImageData
             }
           }
         }

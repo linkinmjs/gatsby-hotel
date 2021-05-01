@@ -9,7 +9,7 @@ import HabitacionPreview from '../components/habitacionPreview';
 const IndexPage = () => {
 
   const habitaciones = useHabitaciones();
-  console.log(habitaciones);
+  //console.log(habitaciones);
 
   return (
 
@@ -28,8 +28,11 @@ const IndexPage = () => {
       >Nuestras Habitaciones</h2>
       
       <ul>
-        {habitaciones.map(habitaciones => (
-          <HabitacionPreview />
+        {habitaciones.map(habitacion => (
+          <HabitacionPreview 
+            key={habitacion.key}
+            habitacion={habitacion}
+          />
         ))}
       </ul>
 
