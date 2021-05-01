@@ -1,24 +1,63 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 
-const HabitacionPreview = ({habitacion}) => {
+const Boton = styled(Link)`
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(44,62,80,.85);
+    width: 100%;
+    color: #FFF;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+`;
 
-    const {contenido, imagen, titulo, slug} = habitacion;
+const HabitacionPreview = ({ habitacion }) => {
+
+    const { contenido, imagen, titulo, slug } = habitacion;
     console.log(imagen);
 
-    return ( 
-        <div>
-            <GatsbyImage 
+    return (
+        <div
+            css={css`
+                border: 1px solid #e1e1e1;
+                margin-bottom: 2rem;
+            `}
+        >
+            <GatsbyImage
                 image={imagen.gatsbyImageData}
                 alt="Habitación"
             />
 
-            <div>
-                <h3>{titulo}</h3>
-                <p>{contenido}</p>
+            <div
+                css={css`
+                    padding: 3rem;
+                `}
+            >
+                <h3
+                    css={css`
+                        font-size: 3rem;
+                    `}
+                >{titulo}</h3>
+                <p
+                    css={css`
+                        overflow: hidden;
+                        height:350px;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                    `}
+                >{contenido}</p>
+
+                <Boton to={slug}>Ver Habitación</Boton>
             </div>
         </div>
-     );
+    );
 }
- 
+
 export default HabitacionPreview;
