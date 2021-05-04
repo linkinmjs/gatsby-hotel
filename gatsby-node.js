@@ -1,7 +1,20 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+exports.createPages = async ({ action, graphql, reporter }) => {
+    const resultado = await graphql(`
+        query{
+            allDatoCmsHabitacion{
+                nodes{
+                    slug
+                }
+            }
+        }
+    `);
 
-// You can delete this file if you're not using it
+    // console.log(resultado.data.allDatoCmsHabitacion);
+
+    if (resultado.errors){
+        reporter.panic('No hubo resultados ',resultado.errors)
+    }
+
+    // si hay páginas, crear los archivos
+    const habitaciones = resultado.data.allDatoCmsHabitacion.nodes;
+}
