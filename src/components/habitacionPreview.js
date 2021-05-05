@@ -20,7 +20,7 @@ const Boton = styled(Link)`
 const HabitacionPreview = ({ habitacion }) => {
 
     const { contenido, imagen, titulo, slug } = habitacion;
-    console.log(imagen);
+    // console.log(imagen);
 
     return (
         <div
