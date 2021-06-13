@@ -1,12 +1,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import {Global, css} from '@emotion/react';
-import Header from '../components/header'
+import { Global, css } from '@emotion/react';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 const Layout = (props) => {
     return (
         <>
-            <Global 
+            <Global
                 styles={css`
                     html{
                         font-size: 62.5%;
@@ -37,16 +38,17 @@ const Layout = (props) => {
                         padding: 0;
                     }
                 `}
-            /> 
+            />
             <Helmet>
                 <title>Gatsby hotel</title>
-                <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"  rel="stylesheet" />
-                <link rel="preconnect" href="https://fonts.gstatic.com"/>
-                <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto:wght@100;700&display=swap" rel="stylesheet"/>
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto:wght@100;700&display=swap" rel="stylesheet" />
             </Helmet>
 
-            <Header/>
+            <Header />
             {props.children}
+            <Footer />
         </>
     );
 }

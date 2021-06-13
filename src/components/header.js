@@ -1,7 +1,7 @@
 import React from 'react';
-import {css} from '@emotion/react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 import Navegacion from './nav';
 
 const EnlaceHome = styled(Link)`
@@ -11,10 +11,10 @@ const EnlaceHome = styled(Link)`
 `;
 
 const Header = () => {
-    return ( 
+    return (
         <header
             css={css`
-                background-color: #222;
+                background-color: rgba(44,62,80);
                 padding: 1rem;
             `}
         >
@@ -40,7 +40,7 @@ const Header = () => {
 
             </div>
         </header>
-     );
+    );
 }
- 
+
 export default Header;
